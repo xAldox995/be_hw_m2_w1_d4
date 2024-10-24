@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @Slf4j
 public class ToppingService {
@@ -15,8 +17,8 @@ public class ToppingService {
     private ToppingRepo toppingRepo;
 
     public void saveTopping(Topping topping) {
-        Topping toppingEsistente = toppingRepo.findByName(topping.getName());
-        if (toppingEsistente != null) throw new ValidationException("Esiste già questo condimento");
+        Optional<Topping> toppingEsistente = toppingRepo.findByName(topping.getName());
+        if (toppingEsistente.isPresent()) throw new ValidationException("Esiste già questo condimento");
         toppingRepo.save(topping);
         log.info("Condimento con id " + topping.getId() + " è stato salvato");
     }
