@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -21,5 +22,13 @@ public class ToppingService {
         if (toppingEsistente.isPresent()) throw new ValidationException("Esiste già questo condimento");
         toppingRepo.save(topping);
         log.info("Condimento con id " + topping.getId() + " è stato salvato");
+    }
+
+    public Optional<Topping> findToppByName(String name) {
+        Optional<Topping> toppingFound = toppingRepo.findByName(name);
+        if (toppingFound.isEmpty()) {
+            throw new NoSuchElementException("Topping con nome " + name + " non èstato trovato");
+        }
+        return toppingFound;
     }
 }

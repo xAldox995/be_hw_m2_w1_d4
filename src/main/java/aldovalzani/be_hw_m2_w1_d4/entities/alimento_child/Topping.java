@@ -20,4 +20,14 @@ public class Topping extends Alimento {
         super(calories, name, prezzo);
         this.pizze = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return "Topping{" +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", price=" + getPrezzo() +
+                '}';
+    }
+
 }
