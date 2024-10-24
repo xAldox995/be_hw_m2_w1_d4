@@ -16,7 +16,7 @@ public class ToppingRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         /*
-        TEST AGGIUNTA TOPPING  VVV
+        TEST AGGIUNTA TOPPING VVV
         Topping prosciuttoCotto = new Topping(125, "prosciutto_cotto", 0.35);
         Topping salamePiccante = new Topping(160, "pepperoni_salami", 0.15);
 
@@ -29,16 +29,16 @@ public class ToppingRunner implements CommandLineRunner {
         }
         */
 
-       /*
-       TEST FIND TOPPING VVV
+        /*
+        TEST FIND TOPPING VVV
         try {
-
             Optional<Topping> condimentoFound = toppingService.findToppByName("salsa");
             log.info(condimentoFound.toString());
         } catch (NoSuchElementException ex) {
             log.error(ex.getMessage());
         }
         */
+
 
     }
 
