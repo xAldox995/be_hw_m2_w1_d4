@@ -1,13 +1,10 @@
 package aldovalzani.be_hw_m2_w1_d4.runners;
 
-import aldovalzani.be_hw_m2_w1_d4.entities.alimento_child.Topping;
 import aldovalzani.be_hw_m2_w1_d4.services.ToppingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 @Slf4j
@@ -32,7 +29,17 @@ public class ToppingRunner implements CommandLineRunner {
         }
         */
 
-        Optional<Topping> condimentoFound = toppingService.findToppByName("caciara");
-        log.info(condimentoFound.toString());
+       /*
+       TEST FIND TOPPING VVV
+        try {
+
+            Optional<Topping> condimentoFound = toppingService.findToppByName("salsa");
+            log.info(condimentoFound.toString());
+        } catch (NoSuchElementException ex) {
+            log.error(ex.getMessage());
+        }
+        */
+
     }
+
 }
