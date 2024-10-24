@@ -23,4 +23,11 @@ public class Pizza extends Alimento {
         super(calories, name, prezzo);
         this.condimenti = new ArrayList<>();
     }
+
+    public void addCondimento(Topping topping) {
+        condimenti.add(topping);
+        setPrezzo(getPrezzo() + topping.getPrezzo());
+        setCalories(getCalories() + topping.getCalories());
+    }
+
 }
